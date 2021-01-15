@@ -1,4 +1,4 @@
-package entity;
+package com.customer.core.entity;
 
 import java.util.UUID;
 
