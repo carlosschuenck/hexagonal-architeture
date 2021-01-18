@@ -1,23 +1,18 @@
-package com.customer.controller;
+package com.customer.customerapi.controller;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import ch.qos.logback.core.net.server.Client;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
-
-@Controller
-@RequestMapping(value = "/")
+@RestController
+@RequestMapping(value = "/customers")
 public class CustomerController {
 
-    @GetMapping(value = "/get")
+    @GetMapping
     public List<String[]> findAll() {
         ArrayList<String[]> lista = new ArrayList<>();
         lista.add(new String[] { "1", "nome 1", "cpf 1" });
@@ -28,17 +23,17 @@ public class CustomerController {
         return lista;
     }
 
-    @PostMapping(value = "/post")
+    @PostMapping
     public String create() {
         return "Salvou";
     }
 
-    @PutMapping(value = "/put")
+    @PutMapping
     public String update() {
         return "atualizou";
     }
 
-    @DeleteMapping(value="/delete")
+    @DeleteMapping
     public String delete(@RequestBody UUID id) {
         return "Excluido";
     }
