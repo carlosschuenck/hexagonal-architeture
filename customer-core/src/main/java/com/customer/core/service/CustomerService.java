@@ -1,4 +1,4 @@
-package service;
+package com.customer.core.service;
 
 import java.util.UUID;
 
