@@ -3,10 +3,10 @@ package com.customer.database.customerdatabase;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+//@SpringBootTest
 class CustomerDatabaseApplicationTests {
 
-	@Test
+//	@Test
 	void contextLoads() {
 	}
 

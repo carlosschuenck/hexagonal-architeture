@@ -3,10 +3,10 @@ package com.customer.customerapi;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+//@SpringBootTest
 class CustomerApiApplicationTests {
 
-	@Test
+//	@Test
 	void contextLoads() {
 	}
 

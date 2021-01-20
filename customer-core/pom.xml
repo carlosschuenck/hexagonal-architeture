@@ -13,6 +13,10 @@
 	<artifactId>customer-core</artifactId>
 	
 	<dependencies>
+		<dependency>
+			<groupId>com.customer</groupId>
+			<artifactId>customer-database</artifactId>
+		</dependency>
 		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
