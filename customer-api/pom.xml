@@ -17,6 +17,11 @@
 			<groupId>com.customer</groupId>
 			<artifactId>customer-core</artifactId>
 		</dependency>
+
+		<dependency>
+			<groupId>com.customer</groupId>
+			<artifactId>customer-database</artifactId>
+		</dependency>
 		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

@@ -4,33 +4,33 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import com.customer.core.entity.Customer;
+import com.customer.core.repository.ICustomerRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.customer.core.service.ICustomerService;
 
 @Service
 public class CustomerService implements ICustomerService {
+
+    @Autowired
+    private ICustomerRepository iCustomerRepository;
 	
-  public String save() {
-    return "Registro criado";
+  public Customer create() {
+    return iCustomerRepository.create();
   }
 
-  public String upadate() {
-    return "Atualizado";
+  public Customer update() {
+    return iCustomerRepository.update();
   }
 
-  public List<String[]> findAll() {
-	  ArrayList<String[]> lista = new ArrayList<>();
-      lista.add(new String[] { "1", "nome 1", "cpf 1" });
-      lista.add(new String[] { "2", "nome 2", "cpf 2" });
-      lista.add(new String[] { "3", "nome 3", "cpf 3" });
-      lista.add(new String[] { "4", "nome 4", "cpf 4" });
-      lista.add(new String[] { "5", "nome 5", "cpf 5" });
-      return lista;
+  public List<Customer> findAll() {
+      return iCustomerRepository.findAll();
   }
 
-  public String delete(UUID id) {
-    return "Registro excluido";
+  public void delete(UUID id) {
+    iCustomerRepository.delete(id);
   }
   
 }

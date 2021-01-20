@@ -1,11 +1,13 @@
 package com.customer.core.service;
 
+import com.customer.core.entity.Customer;
+
 import java.util.List;
 import java.util.UUID;
 
 public interface ICustomerService {
-	public String save();
-	public String upadate();
-	public List<String[]> findAll();
-	public String delete(UUID id);
+	Customer create();
+	Customer update();
+	List<Customer> findAll();
+	void delete(UUID id);
 }

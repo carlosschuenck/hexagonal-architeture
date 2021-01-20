@@ -3,6 +3,7 @@ package com.customer.controller;
 import java.util.List;
 import java.util.UUID;
 
+import com.customer.core.entity.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,23 +23,23 @@ public class CustomerController {
 	private ICustomerService customerService;
 	
     @GetMapping
-    public List<String[]> findAll() {
+    public List<Customer> findAll() {
        return customerService.findAll();
     }
 
     @PostMapping
-    public String create() {
-        return "Salvou";
+    public Customer create() {
+        return customerService.create();
     }
 
     @PutMapping
-    public String update() {
-        return "atualizou";
+    public Customer update() {
+        return customerService.update();
     }
 
     @DeleteMapping
-    public String delete(@RequestBody UUID id) {
-        return "Excluido";
+    public void delete(@RequestBody UUID id) {
+        customerService.delete(id);
     }
     
 }

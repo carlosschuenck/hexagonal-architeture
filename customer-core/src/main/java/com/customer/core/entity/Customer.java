@@ -2,10 +2,16 @@ package com.customer.core.entity;
 
 import java.util.UUID;
 
-public class Client {
+public class Customer {
     private UUID id;
     private String nome;
     private String cpf;
+
+    public Customer(UUID id, String nome, String cpf) {
+        this.id = id;
+        this.nome = nome;
+        this.cpf = cpf;
+    }
 
     public UUID getId() {
         return id;
