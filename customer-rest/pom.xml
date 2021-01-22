@@ -8,9 +8,9 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	
-	<artifactId>customer-api</artifactId>
-	<name>customer-api</name>
-	<description>Demo project for Spring Boot</description>
+	<artifactId>customer-rest</artifactId>
+	<name>customer-rest</name>
+	<description>Provide a rest api for customers</description>
 
 	<dependencies>
 		<dependency>
@@ -27,6 +27,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-hateoas</artifactId>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -38,6 +39,7 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -53,5 +55,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>

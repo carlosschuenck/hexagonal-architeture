@@ -1,9 +1,8 @@
-package com.customer.controller;
+package com.customer.rest.controller;
 
 import java.util.List;
 import java.util.UUID;
 
-import com.customer.core.entity.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.customer.core.service.ICustomerService;
+import com.customer.core.domain.Customer;
+import com.customer.core.ports.inbound.ICustomerService;
+import com.customer.core.service.CustomerService;
 
 @RestController
 @RequestMapping(value = "/customers")
@@ -28,13 +29,13 @@ public class CustomerController {
     }
 
     @PostMapping
-    public Customer create() {
-        return customerService.create();
+    public Customer create(@RequestBody Customer customer) {
+        return customerService.create(customer);
     }
 
     @PutMapping
-    public Customer update() {
-        return customerService.update();
+    public Customer update(@RequestBody Customer customer) {
+        return customerService.update(customer);
     }
 
     @DeleteMapping

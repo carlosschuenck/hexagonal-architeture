@@ -1,10 +1,10 @@
-package com.customer.customerapi;
+package com.customer.database;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 //@SpringBootTest
-class CustomerApiApplicationTests {
+class CustomerDatabaseApplicationTests {
 
 //	@Test
 	void contextLoads() {

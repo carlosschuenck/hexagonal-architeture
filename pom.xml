@@ -6,9 +6,9 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>customer-database</module>
+        <module>customer-rest</module>
         <module>customer-core</module>
-        <module>customer-api</module>
+        <module>customer-database</module>
     </modules>
 
     <parent>
@@ -23,7 +23,13 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>customer-hexagonal-architeture</name>
     <description>Project to exemplify hexagonal architeture using spring boot</description>
-
+	
+	<properties>
+        <java.version>14</java.version>
+        <h2.version>1.4.200</h2.version>
+        <lombok.version>1.18.10</lombok.version>
+    </properties>
+	
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -36,6 +42,20 @@
                 <groupId>com.customer</groupId>
                 <artifactId>customer-database</artifactId>
                 <version>${project.version}</version>
+            </dependency>
+            
+           	<dependency>
+				<groupId>com.h2database</groupId>
+				<artifactId>h2</artifactId>
+				<version>${h2.version}</version>
+				<scope>runtime</scope>
+			</dependency>
+			
+			<dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <optional>true</optional>
             </dependency>
         </dependencies>
     </dependencyManagement>
