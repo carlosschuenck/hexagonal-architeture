@@ -28,6 +28,7 @@
         <java.version>14</java.version>
         <h2.version>1.4.200</h2.version>
         <lombok.version>1.18.10</lombok.version>
+        <modelmapper.version>2.3.8</modelmapper.version>
     </properties>
 	
     <dependencyManagement>
@@ -57,7 +58,14 @@
                 <version>${lombok.version}</version>
                 <optional>true</optional>
             </dependency>
+
+            <dependency>
+                <groupId>org.modelmapper</groupId>
+                <artifactId>modelmapper</artifactId>
+                <version>${modelmapper.version}</version>
+            </dependency>
         </dependencies>
+
     </dependencyManagement>
 
 </project>

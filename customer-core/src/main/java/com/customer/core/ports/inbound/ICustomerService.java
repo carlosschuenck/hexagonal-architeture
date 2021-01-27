@@ -9,5 +9,5 @@ public interface ICustomerService {
 	Customer create(Customer customer);
 	Customer update(Customer customer);
 	List<Customer> findAll();
-	void delete(UUID id);
+	void delete(Customer customer);
 }
