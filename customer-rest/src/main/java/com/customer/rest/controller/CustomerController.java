@@ -39,8 +39,8 @@ public class CustomerController {
     }
 
     @DeleteMapping
-    public void delete(@RequestBody UUID id) {
-        customerService.delete(id);
+    public void delete(@RequestBody Customer customer) {
+        customerService.delete(customer);
     }
     
 }

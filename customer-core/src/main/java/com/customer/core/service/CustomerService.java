@@ -28,8 +28,8 @@ public class CustomerService implements ICustomerService {
 		return repository.findAll();
 	}
 
-	public void delete(UUID id) {
-		repository.delete(id);
+	public void delete(Customer customer) {
+		repository.delete(customer);
 	}
 
 }
