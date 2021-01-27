@@ -12,5 +12,5 @@ public interface ICustomerRepository {
 	Customer update(Customer customer);
 	Optional<Customer> findById(UUID id);
     List<Customer> findAll();
-    void delete(Customer customer);
+    void delete(UUID id);
 }

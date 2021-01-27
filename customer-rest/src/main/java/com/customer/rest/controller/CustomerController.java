@@ -1,11 +1,12 @@
 package com.customer.rest.controller;
 
 import java.util.List;
-import java.util.UUID;
+import static java.util.UUID.fromString;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.customer.core.domain.Customer;
 import com.customer.core.ports.inbound.ICustomerService;
-import com.customer.core.service.CustomerService;
 
 @RestController
 @RequestMapping(value = "/customers")
@@ -38,9 +38,8 @@ public class CustomerController {
         return customerService.update(customer);
     }
 
-    @DeleteMapping
-    public void delete(@RequestBody Customer customer) {
-        customerService.delete(customer);
-    }
-    
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable String id) {
+        customerService.delete(fromString(id));
+    }  
 }

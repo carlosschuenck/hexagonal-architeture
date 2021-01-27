@@ -1,9 +1,12 @@
 package com.customer.database.adapter;
 
+import static java.util.Optional.empty;
+import static java.util.Optional.of;
+
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
-import com.customer.database.dto.CustomerDTO;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import com.customer.core.domain.Customer;
 import com.customer.core.ports.outbound.ICustomerRepository;
+import com.customer.database.dto.CustomerDTO;
 import com.customer.database.repository.CustomerRepository;
 
 @Service
@@ -39,7 +43,15 @@ public class CustomerAdapter implements ICustomerRepository {
     }
 
     @Override
-    public void delete(Customer customer) { repository.delete(modelMapper.map(customer, CustomerDTO.class));
-    }
+    public void delete(UUID id) { repository.deleteById(id); }
+
+	@Override
+	public Optional<Customer> findById(UUID id) {
+		Optional<CustomerDTO> custumer = repository.findById(id);
+		if(custumer.isPresent()) {
+			return of(modelMapper.map(custumer.get(), Customer.class));
+		}
+		return empty();
+	};
 
 }
