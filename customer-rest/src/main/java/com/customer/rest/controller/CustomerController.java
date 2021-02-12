@@ -12,10 +12,11 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.*;
 import com.customer.core.domain.Customer;
 import com.customer.core.ports.inbound.ICustomerService;
 
+@CrossOrigin
 @RestController
 @RequestMapping(value = "/customers")
 public class CustomerController {
