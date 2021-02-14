@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.*;
 import com.customer.core.domain.Customer;
 import com.customer.core.ports.inbound.ICustomerService;
 
-@CrossOrigin
 @RestController
 @RequestMapping(value = "/customers")
 public class CustomerController {
