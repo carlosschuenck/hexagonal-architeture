@@ -16,6 +16,12 @@ import com.customer.core.ports.outbound.ICustomerRepository;
 @Service
 public class CustomerService implements ICustomerService {
 
+	public static final String CUSTOMER_MUST_BE_INFORMED = "Customer must be informed";
+
+	public static final String CUSTOMER_S_NAME_MUST_BE_INFORMED = "Customer's name must be informed";
+
+	public static final String CUSTOMER_S_CPF_MUST_BE_INFORMED = "Customer's CPF must be informed";
+	
 	@Autowired
 	private ICustomerRepository repository;
 
@@ -48,10 +54,10 @@ public class CustomerService implements ICustomerService {
 
 	private void validateRequiredFields(Customer customer) {
 		if(customer == null)
-			throw new BusinessException("Customer must be informed");
+			throw new BusinessException(CUSTOMER_MUST_BE_INFORMED);
 		if(isBlank(customer.getNome()))
-			throw new BusinessException("Customer's name must be informed");
+			throw new BusinessException(CUSTOMER_S_NAME_MUST_BE_INFORMED);
 		if(isBlank(customer.getCpf()))
-			throw new BusinessException("Customer's CPF must be informed");
+			throw new BusinessException(CUSTOMER_S_CPF_MUST_BE_INFORMED);
 	}
 }
